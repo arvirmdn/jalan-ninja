@@ -1,212 +1,41 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>arvirmdn — Link in Bio</title>
-<meta name="description" content="Semua link arvirmdn dalam satu halaman.">
-<link rel="icon" href="favicon-32.png">
-<link rel="apple-touch-icon" href="icon-192.png">
-
-<!-- Open Graph biar preview link di TikTok bagus -->
-<meta property="og:title" content="arvirmdn — Link in Bio">
-<meta property="og:description" content="Semua link arvirmdn dalam satu halaman.">
-<meta property="og:image" content="icon-192.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Ninja</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon-32.png" type="image/png">
 </head>
 <body>
+    <!-- ==================== Header / Nav ==================== -->
+    <header>
+        <nav>
+            <!-- → perubahan: beri id pada ul menu -->
+            <ul id="navMenu">
+                <!-- contoh item menu, sesuaikan dengan yang ada -->
+                <li class="menu-item"><a href="#about">Tentang</a></li>
+                <li class="menu-item"><a href="#skills">Keahlian</a></li>
+                <li class="menu-item"><a href="#projects">Proyek</a></li>
+                <li class="menu-item"><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <button id="theme-toggle" class="theme-toggle" aria-label="Ganti tema">
-    <i class="fa-solid fa-moon"></i>
-  </button>
+    <!-- ==================== Konten utama ==================== -->
+    <!-- ... konten lain Anda ... -->
 
-  <div class="bio-app">
-
-    <section class="profile-card">
-      <div class="avatar-wrapper">
-        <div class="washi-tape"></div>
-        <div class="polaroid">
-          <img src="avatar.png" alt="Foto profil arvirmdn" class="avatar">
-        </div>
-      </div>
-      <div class="profile-name-row">
-        <h1 class="profile-name">arvirmdn</h1>
-        <svg class="verified-badge" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" title="Verified">
-          <circle cx="12" cy="12" r="11" fill="currentColor"/>
-          <path d="M7 12.3l3.2 3.2L17 8.7" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <p class="profile-bio">Digital Creator & Developer 🛠️<br>Semua link ada di bawah 👇</p>
-    </section>
-
-    <nav class="link-list">
-
-      <!-- Menu utama: buka popup pilihan menu -->
-      <button type="button" data-modal="allmenu" class="link-item link-item-featured">
-        <div class="link-icon"><i class="fa-solid fa-grid-2"></i></div>
-        <div class="link-text">
-          <span class="link-title">Semua Menu (Web App)</span>
-          <span class="link-sub">Download TikTok, YouTube, IG & lainnya</span>
-        </div>
-        <i class="fa-solid fa-chevron-right link-arrow"></i>
-      </button>
-
-      <a href="https://wa.me/6285648252688?text=HALO%20TOD%20!" target="_blank" rel="noopener" class="link-item">
-        <div class="link-icon icon-green"><i class="fa-brands fa-whatsapp"></i></div>
-        <div class="link-text">
-          <span class="link-title">Hubungi Saya</span>
-          <span class="link-sub">Chat langsung via WhatsApp</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
-      </a>
-
-      <a href="https://chat.whatsapp.com/DvBYvvQaob3BaqW0icEWaS?s=cl&p=a&ilr=4" target="_blank" rel="noopener" class="link-item">
-        <div class="link-icon icon-blue"><i class="fa-brands fa-whatsapp"></i></div>
-        <div class="link-text">
-          <span class="link-title">Join Group WhatsApp</span>
-          <span class="link-sub">Gabung komunitas</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
-      </a>
-
-      <a href="https://whatsapp.com/channel/0029Vb8IVjIEAKWNMn0ZG50F" target="_blank" rel="noopener" class="link-item">
-        <div class="link-icon icon-teal"><i class="fa-solid fa-bullhorn"></i></div>
-        <div class="link-text">
-          <span class="link-title">Join Saluran</span>
-          <span class="link-sub">Update terbaru dari arvirmdn</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
-      </a>
-
-      <a href="https://donate-arvirmdnid.vercel.app/" target="_blank" rel="noopener" class="link-item">
-        <div class="link-icon icon-amber"><i class="fa-solid fa-heart"></i></div>
-        <div class="link-text">
-          <span class="link-title">Donate</span>
-          <span class="link-sub">Dukung biar makin berkembang</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
-      </a>
-
-    </nav>
-
-    <button id="share-btn" class="share-btn">
-      <i class="fa-solid fa-share-nodes"></i> Bagikan Halaman Ini
-    </button>
-
-    <footer class="bio-footer">
-      <p>© <span id="year"></span> arvirmdn. Dibuat dengan ❤️</p>
+    <!-- ==================== Footer ==================== -->
+    <footer>
+        <!-- ... footer ... -->
     </footer>
 
-  </div>
-
-  <!-- Popup pilihan menu (dibuka dari tombol "Semua Menu") -->
-  <div id="allmenu-modal" class="modal-overlay" aria-hidden="true">
-    <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="allmenu-title">
-      <div class="modal-handle"></div>
-      <div class="modal-header">
-        <h3 id="allmenu-title" class="modal-title">Pilih Menu</h3>
-        <button type="button" id="allmenu-close" class="modal-close" aria-label="Tutup">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <!-- Tambah menu baru di sini kalau nanti ada web/tool lain -->
-        <!-- Pakai <button data-href> (bukan <a href>) biar URL tujuan gak keliatan di status bar pas di-hover -->
-        <button type="button" class="modal-menu-item" data-href="https://arvirmdn-allmenu.vercel.app/">
-          <div class="link-icon"><i class="fa-solid fa-download"></i></div>
-          <div class="link-text">
-            <span class="link-title">Web Downloader, Sosmed & Tools Lainnya</span>
-            <span class="link-sub">Download media lewat browser</span>
-          </div>
-          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
-        </button>
-
-        <button type="button" class="modal-menu-item" data-href="https://t.me/arvirmdnBot">
-          <div class="link-icon icon-blue"><i class="fa-brands fa-telegram"></i></div>
-          <div class="link-text">
-            <span class="link-title">Bot Downloader Sosmed</span>
-            <span class="link-sub">Download langsung dari Telegram</span>
-          </div>
-          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
-        </button>
-
-      </div>
-    </div>
-  </div>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Toggle tema terang/gelap, disimpan biar tetap kepilih pas dibuka lagi
-  const toggleBtn = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-  const applyTheme = (t) => {
-    root.setAttribute('data-theme', t);
-    toggleBtn.innerHTML = t === 'dark'
-      ? '<i class="fa-solid fa-sun"></i>'
-      : '<i class="fa-solid fa-moon"></i>';
-  };
-  const saved = localStorage.getItem('bio-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(saved || (prefersDark ? 'dark' : 'light'));
-  toggleBtn.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    localStorage.setItem('bio-theme', next);
-  });
-
-  // Tombol share -> pakai native share sheet kalau ada, fallback copy link
-  document.getElementById('share-btn').addEventListener('click', async () => {
-    const shareData = {
-      title: 'arvirmdn — Link in Bio',
-      text: 'Semua link arvirmdn ada di sini!',
-      url: window.location.href
-    };
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-      } else {
-        await navigator.clipboard.writeText(window.location.href);
-        alert('Link disalin ke clipboard!');
-      }
-    } catch (e) { /* dibatalkan user, abaikan */ }
-  });
-
-  // Popup "Semua Menu" — buka/tutup bottom sheet
-  const allmenuModal = document.getElementById('allmenu-modal');
-  const openAllmenu = () => {
-    allmenuModal.classList.add('open');
-    allmenuModal.setAttribute('aria-hidden', 'false');
-  };
-  const closeAllmenu = () => {
-    allmenuModal.classList.remove('open');
-    allmenuModal.setAttribute('aria-hidden', 'true');
-  };
-  document.querySelector('[data-modal="allmenu"]').addEventListener('click', openAllmenu);
-  document.getElementById('allmenu-close').addEventListener('click', closeAllmenu);
-  allmenuModal.addEventListener('click', (e) => {
-    if (e.target === allmenuModal) closeAllmenu();
-  });
-
-  // Menu di dalam popup pakai <button data-href>, bukan <a href>,
-  // biar URL tujuan gak muncul di status bar browser pas di-hover.
-  document.querySelectorAll('.modal-menu-item[data-href]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const url = btn.getAttribute('data-href');
-      window.open(url, '_blank', 'noopener');
-    });
-  });
-
-  // Sedikit efek "tap" biar terasa responsif seperti app
-  document.querySelectorAll('.link-item, .share-btn, .modal-menu-item').forEach(el => {
-    el.addEventListener('touchstart', () => el.classList.add('tapped'), { passive: true });
-    el.addEventListener('touchend', () => el.classList.remove('tapped'));
-  });
-</script>
+    <!-- → perubahan: script untuk menambahkan kelas animate setelah DOM siap -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Menambahkan kelas 'animate' ke <body> sehingga CSS animasi aktif
+            document.body.classList.add('animate');
+        });
+    </script>
 </body>
 </html>
