@@ -45,15 +45,15 @@
 
     <nav class="link-list">
 
-      <!-- Menu utama: Web App AllMenu -->
-      <a href="https://arvirmdn-allmenu.vercel.app/" target="_blank" rel="noopener" class="link-item link-item-featured">
+      <!-- Menu utama: buka popup pilihan menu -->
+      <button type="button" data-modal="allmenu" class="link-item link-item-featured">
         <div class="link-icon"><i class="fa-solid fa-grid-2"></i></div>
         <div class="link-text">
           <span class="link-title">Semua Menu (Web App)</span>
           <span class="link-sub">Download TikTok, YouTube, IG & lainnya</span>
         </div>
-        <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
-      </a>
+        <i class="fa-solid fa-chevron-right link-arrow"></i>
+      </button>
 
       <a href="https://wa.me/6283117949780?text=HALO%20MASEH%20!" target="_blank" rel="noopener" class="link-item">
         <div class="link-icon icon-green"><i class="fa-brands fa-whatsapp"></i></div>
@@ -103,6 +103,42 @@
 
   </div>
 
+  <!-- Popup pilihan menu (dibuka dari tombol "Semua Menu") -->
+  <div id="allmenu-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="allmenu-title">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h3 id="allmenu-title" class="modal-title">Pilih Menu</h3>
+        <button type="button" id="allmenu-close" class="modal-close" aria-label="Tutup">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Tambah menu baru di sini kalau nanti ada web/tool lain -->
+        <!-- Pakai <button data-href> (bukan <a href>) biar URL tujuan gak keliatan di status bar pas di-hover -->
+        <button type="button" class="modal-menu-item" data-href="https://arvirmdn-allmenu.vercel.app/">
+          <div class="link-icon"><i class="fa-solid fa-download"></i></div>
+          <div class="link-text">
+            <span class="link-title">Web Downloader, Sosmed & Tools Lainnya</span>
+            <span class="link-sub">Download media lewat browser</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+        </button>
+
+        <button type="button" class="modal-menu-item" data-href="https://t.me/arvirmdnBot">
+          <div class="link-icon icon-blue"><i class="fa-brands fa-telegram"></i></div>
+          <div class="link-text">
+            <span class="link-title">Bot Downloader Sosmed</span>
+            <span class="link-sub">Download langsung dari Telegram</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -141,8 +177,33 @@
     } catch (e) { /* dibatalkan user, abaikan */ }
   });
 
+  // Popup "Semua Menu" — buka/tutup bottom sheet
+  const allmenuModal = document.getElementById('allmenu-modal');
+  const openAllmenu = () => {
+    allmenuModal.classList.add('open');
+    allmenuModal.setAttribute('aria-hidden', 'false');
+  };
+  const closeAllmenu = () => {
+    allmenuModal.classList.remove('open');
+    allmenuModal.setAttribute('aria-hidden', 'true');
+  };
+  document.querySelector('[data-modal="allmenu"]').addEventListener('click', openAllmenu);
+  document.getElementById('allmenu-close').addEventListener('click', closeAllmenu);
+  allmenuModal.addEventListener('click', (e) => {
+    if (e.target === allmenuModal) closeAllmenu();
+  });
+
+  // Menu di dalam popup pakai <button data-href>, bukan <a href>,
+  // biar URL tujuan gak muncul di status bar browser pas di-hover.
+  document.querySelectorAll('.modal-menu-item[data-href]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const url = btn.getAttribute('data-href');
+      window.open(url, '_blank', 'noopener');
+    });
+  });
+
   // Sedikit efek "tap" biar terasa responsif seperti app
-  document.querySelectorAll('.link-item, .share-btn').forEach(el => {
+  document.querySelectorAll('.link-item, .share-btn, .modal-menu-item').forEach(el => {
     el.addEventListener('touchstart', () => el.classList.add('tapped'), { passive: true });
     el.addEventListener('touchend', () => el.classList.remove('tapped'));
   });
