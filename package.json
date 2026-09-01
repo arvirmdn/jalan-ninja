@@ -1,0 +1,12 @@
+{
+  "name": "tiktok-bio-link",
+  "version": "1.0.0",
+  "description": "Bio link page for TikTok profile",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": ["bio-link", "tiktok", "landing-page"],
+  "author": "",
+  "license": "MIT"
+}
