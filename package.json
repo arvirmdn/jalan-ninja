@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Bio link page for TikTok profile",
   "scripts": {
-    "dev": "npx serve .",
+    "dev": "npx serve public",
     "build": "echo 'Static site - no build needed'"
   },
   "keywords": ["bio-link", "tiktok", "landing-page"],
